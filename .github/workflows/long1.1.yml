@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: Long's O
+name: Long's 1
 
 on:
   push:
@@ -61,6 +61,7 @@ jobs:
           cd package
           mkdir openwrt-packages
           cd openwrt-packages
+          https://github.com/jerrykuku/luci-theme-argon.git
 
       - name: Update feeds
         run: |
@@ -158,12 +159,15 @@ jobs:
           CONFIG_PACKAGE_luci-app-arpbind=y
           CONFIG_PACKAGE_luci-app-ssr-plus=y
           CONFIG_PACKAGE_luci-app-syncdial=y
+          CONFIG_PACKAGE_luci-app-sfe=y
+          CONFIG_PACKAGE_luci-app-vlmcsd=y
           EOF
 
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
+          CONFIG_PACKAGE_luci-theme-argon=y
           EOF
 
           # 常用软件包:
